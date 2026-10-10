@@ -1,0 +1,22 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "bale-ai-chatbot",
+  "main": "bale-ai-bot.js",
+  // این تاریخ رو تغییر نده مگر بخوای به نسخه‌های جدیدتر Workers runtime سوییچ کنی
+  "compatibility_date": "2026-09-16",
+
+  // اتصال به Workers AI — نیازی به id نداره، به‌صورت خودکار در دسترس قرار می‌گیره
+  "ai": {
+    "binding": "AI"
+  },
+
+  // فضای ذخیره‌سازی KV برای تاریخچهٔ چت، مدل انتخابی هر کاربر و ...
+  // id خالی یعنی: هنگام کلیک روی دکمهٔ Deploy، کلادفلر خودش این namespace رو می‌سازه
+  "kv_namespaces": [
+    {
+      "binding": "CHAT_HISTORY"
+    }
+  ]
+
+
+}
